@@ -1,4 +1,4 @@
-script2http
+scripts2http
 ====
 
 Inspired by [pyjojo](https://github.com/atarola/pyjojo), script2http exposes a directory of scripts as http get endpoints with the smallest possible functionality! (because I needed something that could work without dreaded python installations)

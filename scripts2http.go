@@ -13,7 +13,7 @@ import (
 )
 
 var absDir string
-var port = flag.String("port", "8080", "TCP port to bind to")
+var address = flag.String("address", "0.0.0.0:8080", "interface and port to bind to")
 var scriptsDir = flag.String("scripts-dir", ".", "Path to folder with the scripts to be exposed")
 
 func ExecuteScript(scriptPath string, callArguments []string) (string, int) {
@@ -73,8 +73,8 @@ func ScriptHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	flag.Parse()
-	fmt.Printf("Exposing scripts in '%v' on port %v\n", *scriptsDir, *port)
+	fmt.Printf("Exposing scripts in '%v' on %v\n", *scriptsDir, *address)
 	absDir, _ = filepath.Abs(*scriptsDir)
 	http.HandleFunc("/", ScriptHandler)
-	panic(http.ListenAndServe(":"+*port, nil))
+	panic(http.ListenAndServe(*address, nil))
 }
