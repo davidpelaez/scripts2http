@@ -1,0 +1,4 @@
+#!/bin/bash
+set -eo pipefail
+echo "I will fail in a moment"
+exit 1

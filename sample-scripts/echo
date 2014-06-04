@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "Echo received the following argument(s):"
+
+while (( "$#" )); do
+	echo "  - $1"
+	shift
+done

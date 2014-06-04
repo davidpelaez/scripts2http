@@ -1,0 +1,4 @@
+#!/bin/bash
+set -eo pipefail
+# ISO-ish date
+date -u +"%Y-%m-%dT%H:%M:%SZ"
